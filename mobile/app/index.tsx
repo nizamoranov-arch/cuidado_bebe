@@ -1,6 +1,7 @@
-import { Text, View } from "react-native";
+import React from "react";
+import { Text, View, Button } from "react-native";
 
-export default function Index() {
+export default function Index({ navigation }: any) {
   return (
     <View
       style={{
@@ -9,7 +10,11 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Página principal</Text>
+      <Button
+        title="Ir al ChatBot"
+        onPress={() => navigation.navigate("Chat")}
+      />
     </View>
   );
 }
