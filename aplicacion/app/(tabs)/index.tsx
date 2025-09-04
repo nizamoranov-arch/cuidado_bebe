@@ -51,10 +51,8 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
-      {/* Botones de navegación */}
-
       <ThemedView style={styles.stepContainer}>
-        <Button title="Iniciar Sesión" onPress={() => router.push("/login")} />
+        <Button title="Acceder perfil" onPress={() => router.push("/login")} />
       </ThemedView>
     </ParallaxScrollView>
   );
