@@ -1,16 +1,7 @@
-// components/Chat.tsx
 import { View, Text } from "react-native";
 import { Image, Platform, TextInput, Button, FlatList, StyleSheet } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-
 import { useState } from "react";
-// components/Chat.tsx
 
 export default function Chat() {
   const [messages, setMessages] = useState<{ id: string; sender: string; text: string }[]>([]);
@@ -18,12 +9,10 @@ export default function Chat() {
 
   const handleSend = () => {
     if (!input.trim()) return;
-
-    // Agregar mensaje del usuario
+    
     const newMessage = { id: Date.now().toString(), sender: "user", text: input };
     setMessages((prev) => [...prev, newMessage]);
-
-    // Limpiar input
+    
     setInput("");
     const handleSend = async () => {
   if (!input.trim()) return;
@@ -49,20 +38,16 @@ export default function Chat() {
     const botReply = data.choices[0].message.content;
 
     setMessages((prev) => [
-      ...prev,
-      { id: Date.now().toString(), sender: "bot", text: botReply },
-    ]);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-    // Aquí luego llamaremos a la IA y agregaremos la respuesta
+        ...prev,
+        { id: Date.now().toString(), sender: "bot", text: botReply },
+      ]);
+    } catch (error) {
+      console.error(error);
+    }
   };
-
+  };
   return (
     <View style={styles.container}>
-      {/* Lista de mensajes */}
       <FlatList
         data={messages}
         keyExtractor={(item) => item.id}
@@ -78,8 +63,6 @@ export default function Chat() {
         )}
         style={styles.messageList}
       />
-
-      {/* Input y botón */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -91,7 +74,6 @@ export default function Chat() {
       </View>
     </View>
   );
-  
 }
 
 const styles = StyleSheet.create({
