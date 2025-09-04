@@ -1,7 +1,5 @@
 {
-  // "extends": "@tsconfig/react-native/tsconfig.json", // Removed due to missing file
   "compilerOptions": {
-
     "jsx": "react-native",
     "strict": true,
     "paths": {
@@ -15,5 +13,6 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }
