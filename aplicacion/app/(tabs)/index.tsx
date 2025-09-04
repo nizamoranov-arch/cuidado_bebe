@@ -52,9 +52,6 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       {/* Botones de navegación */}
-      <ThemedView style={styles.stepContainer}>
-        <Button title="Ir al Chat" onPress={() => router.push("/Chat")} />
-      </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
         <Button title="Iniciar Sesión" onPress={() => router.push("/login")} />
